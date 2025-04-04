@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Doping Awareness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .education-content article {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0055a5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Anti-Doping Awareness</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#" id="start-quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Using Technology to Combat Doping in Sports</h2>
+            <p>Traditional methods of anti-doping education are outdated. Learn how modern technology makes information more accessible and engaging.</p>
+        </section>
+
+        <section class="education-content">
+            <h2>Key Methods in Tech-Based Anti-Doping Education</h2>
+            
+            <article>
+                <h3>Mobile Apps for Learning</h3>
+                <p>Interactive apps provide athletes with instant access to anti-doping rules, banned substances, and self-assessment tools.</p>
+            </article>
+            
+            <article>
+                <h3>AI-Powered Monitoring</h3>
+                <p>Artificial intelligence helps detect anomalies in performance metrics, assisting in fair play monitoring.</p>
+            </article>
+            
+            <article>
+                <h3>Gamified Learning & Quizzes</h3>
+                <p>Engage with quizzes and challenges that reinforce anti-doping knowledge in a fun and interactive way.</p>
+                <button id="open-quiz">Take a Quiz</button>
+            </article>
+            
+            <article>
+                <h3>Real-Time Feedback & Analytics</h3>
+                <p>Track user engagement with analytics to measure awareness levels and optimize educational strategies.</p>
+            </article>
+        </section>
+
+        <section id="quiz-section" style="display: none;">
+            <h2>Anti-Doping Quiz</h2>
+            <p>Test your knowledge on anti-doping measures.</p>
+
+            <form id="quiz-form">
+                <label>1. What is the purpose of anti-doping regulations?</label><br>
+                <input type="radio" name="q1" value="a"> To prevent cheating in sports<br>
+                <input type="radio" name="q1" value="b"> To promote healthy living<br>
+                <input type="radio" name="q1" value="c"> Both A and B<br><br>
+
+                <label>2. Which of the following substances is banned?</label><br>
+                <input type="radio" name="q2" value="a"> Caffeine<br>
+                <input type="radio" name="q2" value="b"> Anabolic Steroids<br>
+                <input type="radio" name="q2" value="c"> Vitamin C<br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="quiz-result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anti-Doping Awareness. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const quizButton = document.getElementById("open-quiz");
+            const quizSection = document.getElementById("quiz-section");
+
+            quizButton.addEventListener("click", function() {
+                quizSection.style.display = "block";
+                window.scrollTo({ top: quizSection.offsetTop, behavior: "smooth" });
+            });
+
+            document.getElementById("quiz-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                document.getElementById("quiz-result").innerText = "Thank you for participating! Your answers have been recorded.";
+            });
+        });
+    </script>
+
+</body>
+</html>
